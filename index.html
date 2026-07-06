@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière - Specialty Coffee & Roastery</title>
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            50: '#FAF7F2',
+                            100: '#F0EBE1',
+                            200: '#E1D7C6',
+                            500: '#A68A64',
+                            600: '#8C7355',
+                            800: '#4A3B2C',
+                            900: '#2D241B',
+                        },
+                        cream: '#FFFDF9'
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1920&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 외부 CSS 연결 -->
+    <link href="./css/style.css" rel="stylesheet">
+    
+    <!-- 외부 JS 연결 (defer 속성: HTML 로드 후 실행) -->
+    <script src="./js/main.js" defer></script>
+</head>
+<body class="text-coffee-900 antialiased selection:bg-coffee-500 selection:text-white">
+
+    <!-- 1. 네비게이션 바 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-serif font-bold text-white tracking-widest cursor-pointer">Lumière.</div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-white/90">
+                    <a href="#about" class="hover:text-white transition-colors">STORY</a>
+                    <a href="#menu" class="hover:text-white transition-colors">MENU</a>
+                    <a href="#gallery" class="hover:text-white transition-colors">SPACE</a>
+                    <a href="#location" class="hover:text-white transition-colors">LOCATION</a>
+                </div>
+                <a href="#location" class="hidden md:block bg-white/10 hover:bg-white text-white hover:text-coffee-900 px-6 py-2 rounded-full backdrop-blur-sm transition-all duration-300 text-sm font-bold border border-white/30">
+                    오시는 길
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. 메인 히어로 섹션 -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed transform scale-105"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="text-coffee-200 tracking-[0.3em] text-xs md:text-sm font-bold mb-6 block reveal-up">SPECIALTY COFFEE & ROASTERY</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-8 leading-tight reveal-up delay-100">
+                Taste the <br> <span class="italic text-coffee-200 font-light">Light</span> of Coffee
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-12 font-light leading-relaxed max-w-2xl mx-auto reveal-up delay-200">
+                매일 아침 직접 로스팅한 신선한 원두와 따뜻한 햇살이 머무는 공간.<br>
+                뤼미에르에서 도심 속 완벽한 휴식을 경험해보세요.
+            </p>
+            <a href="#menu" class="inline-flex items-center gap-2 bg-white text-coffee-900 px-8 py-4 rounded-full font-bold hover:bg-coffee-50 hover:scale-105 transition-all duration-300 reveal-up delay-300 group">
+                시그니처 메뉴 보기 
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2 reveal-up delay-500 animate-pulse">
+            <span class="text-xs tracking-widest">SCROLL</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- 3. 브랜드 스토리 섹션 -->
+    <section id="about" class="py-24 md:py-32 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                <div class="w-full lg:w-1/2 relative reveal-left">
+                    <div class="relative rounded-t-full rounded-bl-full overflow-hidden aspect-[4/5] img-zoom-container shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Barista making coffee" class="w-full h-full object-cover img-zoom">
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 reveal-up">
+                    <h2 class="text-4xl md:text-5xl font-serif text-coffee-900 mb-8 leading-tight">
+                        커피 한 잔에 담긴<br>우리의 <span class="italic text-coffee-500">진심</span>
+                    </h2>
+                    <p class="text-coffee-800 text-lg mb-6 font-light leading-relaxed">
+                        2018년부터 시작된 뤼미에르는 단순한 카페를 넘어, 사람과 커피가 만나는 따뜻한 문화를 만들어가고 있습니다.
+                    </p>
+                    <p class="text-coffee-800 text-lg mb-10 font-light leading-relaxed">
+                        생두의 선별부터 로스팅, 추출까지 모든 과정에 바리스타의 섬세한 손길이 닿아 있습니다. 완벽한 한 잔을 위한 우리의 고집스러운 여정을 함께해 보세요.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 border-t border-coffee-200 pt-10">
+                        <div>
+                            <div class="text-4xl font-serif text-coffee-500 mb-2">Q-Grader</div>
+                            <div class="text-sm font-bold text-coffee-800">전문 큐그레이더 로스팅</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-serif text-coffee-500 mb-2">Top 5%</div>
+                            <div class="text-sm font-bold text-coffee-800">스페셜티 생두 사용</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 메뉴 섹션 -->
+    <section id="menu" class="py-24 md:py-32 bg-coffee-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-coffee-500 font-bold tracking-widest text-sm block mb-4">OUR MENU</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-coffee-900 mb-8">시그니처 메뉴</h2>
+                
+                <!-- Menu Filters -->
+                <div class="flex flex-wrap justify-center gap-4 filter-btns">
+                    <button class="px-6 py-2 rounded-full border border-coffee-200 bg-white text-coffee-900 font-medium hover:bg-coffee-900 hover:text-white transition-colors active" data-filter="all">전체보기</button>
+                    <button class="px-6 py-2 rounded-full border border-coffee-200 bg-white text-coffee-900 font-medium hover:bg-coffee-900 hover:text-white transition-colors" data-filter="coffee">커피</button>
+                    <button class="px-6 py-2 rounded-full border border-coffee-200 bg-white text-coffee-900 font-medium hover:bg-coffee-900 hover:text-white transition-colors" data-filter="non-coffee">논커피</button>
+                    <button class="px-6 py-2 rounded-full border border-coffee-200 bg-white text-coffee-900 font-medium hover:bg-coffee-900 hover:text-white transition-colors" data-filter="dessert">디저트</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 menu-container">
+                <!-- Menu Item 1 -->
+                <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group reveal-up" data-category="coffee">
+                    <div class="aspect-square img-zoom-container relative">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67ef46?q=80&w=600&auto=format&fit=crop" alt="Lumiere Latte" class="w-full h-full object-cover img-zoom">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-coffee-600 shadow-sm">SIGNATURE</div>
+                    </div>
+                    <div class="p-8 text-center">
+                        <div class="text-xs text-coffee-500 mb-2 font-medium tracking-wider">LUMIÈRE LATTE</div>
+                        <h3 class="text-xl font-bold mb-3">뤼미에르 라떼</h3>
+                        <p class="text-coffee-800 text-sm mb-4 font-light h-10">수제 바닐라 빈 시럽과 묵직한 에스프레소, 그리고 부드러운 크림의 조화</p>
+                        <div class="text-lg font-serif font-bold text-coffee-900">6,500 KRW</div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group reveal-up delay-100" data-category="coffee">
+                    <div class="aspect-square img-zoom-container relative">
+                        <img src="https://images.unsplash.com/photo-1495474472201-43647743ceeb?q=80&w=600&auto=format&fit=crop" alt="Filter Coffee" class="w-full h-full object-cover img-zoom">
+                    </div>
+                    <div class="p-8 text-center">
+                        <div class="text-xs text-coffee-500 mb-2 font-medium tracking-wider">FILTER COFFEE</div>
+                        <h3 class="text-xl font-bold mb-3">싱글 오리진 필터 커피</h3>
+                        <p class="text-coffee-800 text-sm mb-4 font-light h-10">매달 새롭게 큐레이션 되는 스페셜티 원두의 다채로운 향미</p>
+                        <div class="text-lg font-serif font-bold text-coffee-900">7,000 KRW</div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group reveal-up delay-200" data-category="dessert">
+                    <div class="aspect-square img-zoom-container relative">
+                        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=600&auto=format&fit=crop" alt="Terrine" class="w-full h-full object-cover img-zoom">
+                    </div>
+                    <div class="p-8 text-center">
+                        <div class="text-xs text-coffee-500 mb-2 font-medium tracking-wider">MATCHA TERRINE</div>
+                        <h3 class="text-xl font-bold mb-3">말차 테린느</h3>
+                        <p class="text-coffee-800 text-sm mb-4 font-light h-10">최상급 제주 말차를 듬뿍 넣어 꾸덕하고 쌉싸름한 시그니처 디저트</p>
+                        <div class="text-lg font-serif font-bold text-coffee-900">6,000 KRW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 갤러리 섹션 -->
+    <section id="gallery" class="py-24 bg-coffee-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal-up">
+                <div>
+                    <span class="text-coffee-500 font-bold tracking-widest text-sm block mb-4">ATMOSPHERE</span>
+                    <h2 class="text-4xl md:text-5xl font-serif">머무는 공간</h2>
+                </div>
+                <p class="text-coffee-200 font-light mt-4 md:mt-0 md:max-w-xs">
+                    따뜻한 우드 톤과 자연 채광이 어우러진 공간에서 오롯이 당신만의 시간을 즐겨보세요.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px] reveal-up delay-100">
+                <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden img-zoom-container cursor-pointer gallery-img">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" alt="Cafe Interior Main" class="w-full h-full object-cover img-zoom">
+                </div>
+                <div class="col-span-2 md:col-span-1 rounded-2xl overflow-hidden img-zoom-container cursor-pointer gallery-img">
+                    <img src="https://images.unsplash.com/photo-1501339817309-1461ba14ce65?q=80&w=400&auto=format&fit=crop" alt="Window Seat" class="w-full h-full object-cover img-zoom">
+                </div>
+                <div class="col-span-2 md:col-span-1 rounded-2xl overflow-hidden img-zoom-container cursor-pointer gallery-img">
+                    <img src="https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?q=80&w=400&auto=format&fit=crop" alt="Roasting Room" class="w-full h-full object-cover img-zoom">
+                </div>
+                <div class="col-span-2 rounded-2xl overflow-hidden img-zoom-container cursor-pointer gallery-img">
+                    <img src="https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?q=80&w=800&auto=format&fit=crop" alt="Coffee Bar" class="w-full h-full object-cover img-zoom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 오시는 길 섹션 -->
+    <section id="location" class="py-24 bg-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-up">
+                    <span class="text-coffee-500 font-bold tracking-widest text-sm block mb-4">LOCATION</span>
+                    <h2 class="text-4xl md:text-5xl font-serif text-coffee-900 mb-8">찾아오시는 길</h2>
+                    
+                    <div class="space-y-8 mt-12">
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-coffee-100 p-3 rounded-full text-coffee-900 shrink-0">📍</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">주소</h4>
+                                <p class="text-coffee-800 font-light text-sm">서울특별시 강남구 테헤란로 123<br>뤼미에르 커피 로스터스 1층</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-coffee-100 p-3 rounded-full text-coffee-900 shrink-0">🕒</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">영업 시간</h4>
+                                <p class="text-coffee-800 font-light text-sm">평일: 08:00 - 21:00<br>주말 및 공휴일: 10:00 - 22:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rounded-3xl overflow-hidden h-[400px] shadow-2xl relative group reveal-left delay-100">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.011855734139!2d127.02980891516709!3d37.49755497981084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca14e9f7831d1%3A0xe54ef6f6dd55d611!2sGangnam-gu%2C%20Seoul!5e0!3m2!1sen!2skr!4v1620000000000!5m2!1sen!2skr" 
+                        class="absolute inset-0 w-full h-full filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" 
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="bg-coffee-900 text-coffee-200 py-12 md:py-16 border-t border-coffee-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div>
+                    <div class="text-3xl font-serif font-bold text-white tracking-widest mb-2">Lumière.</div>
+                    <p class="text-sm font-light text-coffee-500">Specialty Coffee & Roastery</p>
+                </div>
+                <div class="text-sm font-light md:text-center space-y-2">
+                    <p>대표자: 김커피 | 사업자등록번호: 123-45-67890</p>
+                    <p>전화: 02-1234-5678 | 이메일: info@lumiere.com</p>
+                </div>
+            </div>
+            <div class="border-t border-coffee-800 mt-12 pt-8 text-center text-xs font-light text-coffee-500">
+                &copy; 2024 Lumière Coffee Roasters. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 공통 UI: 라이트박스 -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-coffee-900/95 hidden opacity-0 flex flex-col items-center justify-center transition-all duration-300 backdrop-blur-sm">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white p-2 hover:bg-white/10 rounded-full transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Zoomed view" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- 공통 UI: 위로 가기 버튼 -->
+    <button id="scrollTopBtn" class="fixed bottom-8 right-8 bg-coffee-900 text-white p-3 rounded-full shadow-lg opacity-0 translate-y-10 transition-all duration-300 z-40 hover:bg-coffee-600 focus:outline-none hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </button>
+
+</body>
+</html>
